@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adminclientesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="idcliente" />
+    </Key>
+    <Property Name="idcliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ap_paterno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ap_materno" Type="nvarchar" MaxLength="50" />
+    <Property Name="genero" Type="bit" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="domicilio" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ciudad" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="codigo_postal" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estados">
+    <Key>
+      <PropertyRef Name="clave" />
+    </Key>
+    <Property Name="clave" Type="tinyint" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_clientes_estados">
+    <End Role="estados" Type="Self.estados" Multiplicity="1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="clave" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="adminclientesModelStoreContainer">
+    <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estados" EntityType="Self.estados" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_clientes_estados" Association="Self.FK_clientes_estados">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

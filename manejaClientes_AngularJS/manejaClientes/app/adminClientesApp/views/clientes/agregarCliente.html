@@ -1,0 +1,24 @@
+<div class="indent">
+	<div class="container">
+	<header>
+		<h3><span class="glyphicon glyphicon-edit"></span> {{accionCliente}} cliente</h3>
+	</header>
+	<div class="container">
+		<form name="forma" class="form-horizontal" role="form" >
+			 <input-text nombre ="'nombreAdd'" labeltext="'Nombre '" modelo="cliente.nombre" forma="forma"></input-text>
+			 <input-text nombre ="'apellidoPAdd'" labeltext="'Apellido Paterno'" modelo="cliente.apellido_paterno" forma="forma"></input-text>
+			 <input-text nombre ="'apellidoMAdd'" labeltext="'Apellido Materno'" modelo="cliente.apellido_materno" forma="forma"></input-text>
+			 <radio-genero ></radio-genero> 
+			 <input-email nombre ="'emailAdd'" labeltext="'Correo Electronico '" modelo="cliente.email" forma="forma"></input-email> 
+			 <input-text nombre ="'domicilioAdd'" labeltext="'Domicilio '" modelo="cliente.domicilio" forma="forma"></input-text> 
+			 <input-text nombre ="'ciudadAdd'" labeltext="'Ciudad '" modelo="cliente.ciudad" forma="forma"></input-text> 
+			 <val-select opciones="estadosMx" nombre ="'estadoAdd'" labeltext="'Estado '" modelo="cliente.estado1" forma="forma" ></val-select> 
+			 <input-num nombre ="'cpostalAdd'" labeltext="'Codigo Postal '" modelo="cliente.codigo_postal" forma="forma"></input-num> 
+		 </form>
+	 </div>
+	<button class="btn btn-primary" style="color:white" ng-click="guardar()"  ng-disabled = "forma.$invalid" > {{accionCliente}} </button>
+		<a href="#/clientes">  <button class="btn btn-danger"  >Cancelar </button></a>
+	</div>
+	<span>{{mensaje}}</span>
+</div>
+		

@@ -1,0 +1,13 @@
+﻿<div class="form-group" ng-class="{ 'has-error' : forma.{{ nombre }}.$touched  && forma.{{ nombre }}.$invalid, 'has-success' : forma.{{ nombre }}.$valid}" >
+	<label class="text-info" for="{{ nombre }}">{{ labeltext }}: </label>
+
+	 <select  	class="form-control" name="{{ nombre }}"  id="{{ nombre }}" 
+				ng-options = "opcion.nombre for opcion in opciones track by opcion.clave"
+				ng-model="modelo"  required >
+		
+	</select>
+	<div ng-show="forma.{{ nombre }}.$touched" >
+		<p class="help-block text-danger" ng-show="forma.{{ nombre }}.$error.required"> Campo requerido </p>
+	</div>
+</div>
+

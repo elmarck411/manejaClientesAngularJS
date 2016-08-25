@@ -1,0 +1,8 @@
+﻿<div class="form-group" ng-class="{ 'has-error' : forma.{{ nombre }}.$dirty  && forma.{{ nombre }}.$invalid, 'has-success' : forma.{{ nombre }}.$valid}" >
+<label class="text-info" for="{{ nombre }}">{{ labeltext }}: </label>
+    <input  type="number" class="form-control"  id="{{ nombre }}" name="{{ nombre }}"  placeholder="{{ labeltext }}" ng-model="modelo" required>
+	<div ng-show="forma.{{ nombre }}.$dirty" >
+	    <p class="help-block text-danger" ng-show="forma.{{ nombre }}.$error.required"> Campo requerido </p>
+        <p class="help-block text-danger" ng-show="forma.{{ nombre }}.$error.number"> Este campo debe ser numerico </p>
+    </div>
+</div>

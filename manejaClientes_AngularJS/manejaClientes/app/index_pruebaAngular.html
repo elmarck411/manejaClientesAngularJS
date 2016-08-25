@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SB Admin 2</title>
+
+</head>
+<body ng-app="bsApp">
+
+	<div ng-controller="tablesCtrl">
+		<input ng-model="datoCtrl" size="50" >
+		{{ datoCtrl }}
+	</div>
+	<div ng-controller="mainCtrl">
+		<input ng-model="datoCtrl" size="50" >
+		{{ datoCtrl }} 
+	</div> 
+	
+	<div ng-controller="dashboardCtrl">
+		<input ng-model="datoCtrl" size="50" >
+		{{ datoCtrl }}
+	</div>
+	<div ng-view></div>
+	<!-- librerias de angular -->
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controllers/main.js"> </script>
+		<script src="js/controllers/dashboard.js"></script>
+		<script src="js/controllers/tables.js"></script>
+</body>
+</html>

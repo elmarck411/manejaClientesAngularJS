@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Aplicacion Web, AngularJS" content="">
+    <meta name="Marcelo Rangel" content="">
+    <title>AngularJS con Bootstrap</title>
+
+	
+	<link href="Content/styles/estilo.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+	<link href="Scripts/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+     
+
+</head> 
+
+<body ng-app="adminClientesApp">
+     
+    <div id="wrapper"> 
+	      
+        <!-- Barra de navegacion -->
+		<header class="navbar navbar-inverse " ng-controller="barraNavCtrl" >
+			<div class="container-fluid" >
+				<div class="navbar-header"> 
+				<!-- boton para contraer el menu -->
+				 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				 	<span class="icon-bar"></span>
+				</button>
+					<a  class="navbar-brand" href="#/" style="width:150px;" >
+					<div class="marcaWrap">  
+						<img src="Content/images/brand.png" alt="logo"  class="marcaImg" > 
+						<span class = "marcaTexto">MyStore</span>   
+					</div>
+					</a>
+					 
+				</div>  
+				<!-- div target del boton collapse -->
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<!-- menu --> 
+					<ul class = "nav navbar-nav"> 
+						<li class="menuitem" ng-class="{menuactivo: seleccionado('/clientes')}"><a href="#/clientes">Clientes</a></li>
+						<li class="menuitem" ng-class="{menuactivo: seleccionado('/pedidos')}"><a href="#/pedidos">Pedidos</a></li>
+						<li class="menuitem" ng-class="{menuactivo: seleccionado('/acerca')}"><a href="#/acerca">Acerca de</a></li> 
+						
+					</ul>
+				<!--Elementos en la parte derecha de la barra de navegacion-->
+				<ul class="nav navbar-nav navbar-right"> 
+					<li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+				</div>
+			</div>
+		</header>
+      
+		<!-- Vistas parciales, de las diferentes opciones en el menu -->
+		
+        <div ng-view > </div>
+		
+
+    </div> 
+	 
+	<!-- librerias de angular --> 
+	<script src="Scripts/bower_components/angular/angular.js"></script> 
+	<script src="Scripts/bower_components/angular-route/angular-route.js"></script>
+	<script src="Scripts/bower_components/angular-resource/angular-resource.min.js"></script>
+	
+
+	<!-- scripts de la aplicacion-->
+	    <script src="app/app.js"></script>
+		<!-- controladores -->
+		<script src="app/adminClientesApp/controllers/clientes/clientesCtrl.js"></script>
+		<script src="app/adminClientesApp/controllers/clientes/agregarClienteCtrl.js"></script>
+		<script src="app/adminClientesApp/controllers/clientes/modificarClienteCtrl.js"></script>
+		
+		<script src="app/adminClientesApp/controllers/pedidosCtrl.js"></script>
+		<script src="app/adminClientesApp/controllers/acercaCtrl.js"></script>
+		<script src="app/adminClientesApp/controllers/loginCtrl.js"></script>
+		<script src="app/adminClientesApp/controllers/barraNavCtrl.js"></script>
+		
+		<!-- directivas -->
+		<script src="app/directivasGen/itemMenuDir.js"></script>
+		<script src="app/directivasGen/inputText.js"></script>
+		<script src="app/directivasGen/inputNum.js"></script>
+		<script src="app/directivasGen/inputEmail.js"></script>
+		<script src="app/directivasGen/valSelect.js"></script>
+		<script src="app/directivasGen/radioGenero.js"></script>
+
+		<!-- servicios -->
+		<script src="app/adminClientesApp/services/servicioDatos.js"></script>
+		<script src="app/adminClientesApp/services/clientes/servicioClientes.js"></script>
+		<script src="app/adminClientesApp/services/modalDialog.js"></script>
+		
+		
+	 <!-- jQuery, bootstrap.js requiere jquery, por lo que se debe colocar su referencia antes de la de bootstrap.js -->
+    <script src="Scripts/bower_components/jquery/dist/jquery.min.js"></script>
+   <!-- bootstrap -->
+	<script src="Scripts/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+	<!-- 	<!--Bootstrap UI, Dialogo Modal-->
+	<script src="Scripts/bower_components/angular-ui-bootstrap_min/ui-bootstrap-tpls-1.1.2.min.js"></script>
+	
+   
+</body>
+
+</html>
+

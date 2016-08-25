@@ -1,0 +1,7 @@
+<item-menu texto= "Clientes" url="#/clientes" activo="'si'" ></item-menu>
+
+<item-menu texto= "Pedidos" url="#/pedidos" ></item-menu>
+
+<item-menu texto= "Acerca de..." url="#/acerca" ></item-menu>
+						
+<item-menu texto= "Login" url="#/login" ></item-men

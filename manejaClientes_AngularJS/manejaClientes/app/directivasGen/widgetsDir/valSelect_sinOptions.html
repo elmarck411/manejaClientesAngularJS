@@ -1,0 +1,12 @@
+﻿<div class="form-group" ng-class="{ 'has-error' : forma.{{ nombre }}.$touched  && forma.{{ nombre }}.$invalid, 'has-success' : forma.{{ nombre }}.$valid}" >
+	<label class="text-info" for="{{ nombre }}">{{ labeltext }}: </label>
+
+	 <select  class="form-control" placeholder="Seleccione" name="{{ nombre }}"  id="{{ nombre }}" ng-model="modelo" title="'Seleccione'" required >
+		<option value="">Seleccione</option>
+		<option ng-repeat="opcion in opciones" value="{{opcion.clave}}">{{opcion.nombre}}</option>
+	</select>
+	<div ng-show="forma.{{ nombre }}.$touched" >
+		<p class="help-block text-danger" ng-show="forma.{{ nombre }}.$error.required"> Campo requerido </p>
+	</div>
+</div>
+

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adminclientesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="idcliente" />
+    </Key>
+    <Property Name="idcliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="apellido_paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="apellido_materno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="genero" Type="Boolean" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="domicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ciudad" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="codigo_postal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="estado1" Relationship="adminclientesModel.FK_clientes_estados" FromRole="clientes" ToRole="estados" />
+  </EntityType>
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="clave" />
+    </Key>
+    <Property Name="clave" Type="Byte" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="clientes" Relationship="Self.FK_clientes_estados" FromRole="estados" ToRole="clientes" />
+  </EntityType>
+  <Association Name="FK_clientes_estados">
+    <End Role="estados" Type="Self.estado" Multiplicity="1" />
+    <End Role="clientes" Type="Self.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="clave" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="adminclientesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="clientes" EntityType="Self.cliente" />
+    <EntitySet Name="estados" EntityType="Self.estado" />
+    <AssociationSet Name="FK_clientes_estados" Association="Self.FK_clientes_estados">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

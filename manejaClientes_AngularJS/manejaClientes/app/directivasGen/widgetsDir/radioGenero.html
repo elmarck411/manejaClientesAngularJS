@@ -1,0 +1,29 @@
+﻿<div class="form-group" ng-class="{ 'has-error' : forma.radioGenero.$touched  && forma.radioGenero.$invalid}" >
+	<label class="text-info" for="{{ nombre }}"> Genero : </label>
+	<div class="radio">
+		<label class="radio">
+			<input type="radio" name="radioGenero" value="true"
+						   ng-checked="cliente.genero == true"
+						   data-ng-model="cliente.genero"  required />
+					Masculino
+		</label>
+	</div>
+	<div class="radio">
+		<label class="radio">
+			<input type="radio" name="radioGenero" value="false"
+					   ng-checked="cliente.genero == false"
+					   data-ng-model="cliente.genero" required />
+				Femenino
+		</label>
+	</div>
+	
+	
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+
+/* Barra de menu, seccion izquierda */
+div.marcaWrap{
+	vertical-align:middle;
+	height:100%
+}
+span.marcaTexto {
+	display: inline;
+	float: left;
+	padding-left:10px;
+	color: lightblue;
+	
+}
+img.marcaImg{
+	height: 100%;
+	float: left;
+}
+
+
+/* items de cualquier barra de navegacion */
+.navbar .nav > li  {
+    cursor:pointer;
+}
+
+/*items de la barra de Menu (Menu principal de secciones)*/
+.navbar .nav > li.menuitem > a {
+	color: #ffffff;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+	
+}
+
+
+
+/* elemento activo de la barra de menu */
+.navbar .nav > li.menuactivo > a, .navbar .nav > li.menuactivo > a:hover, .navbar .nav > li.menuactivo > a:focus 
+{
+	background-color: #555555;
+	outline: none;
+}
+/* hover sobre elementos no activos del menu*/
+.navbar .nav > li.menuitem > a:hover
+{
+	color: lightblue;
+	
+}
+
+
+/*items de la barra de herramientas (seleccion de mosaico/lista)*/
+.navbar .nav > li.toolbaritem > a {
+        height:30px;
+		padding-top: 6px;
+        padding-bottom: 0px;
+        -webkit-text-shadow: none;
+        text-shadow: none;
+}
+
+/* elemento activo de la barra de herramientas */
+.navbar .nav > li.active > a, .navbar .nav > li.active > a:hover, .navbar .nav > li.active > a:focus {
+    background-color: #555555;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: lightblue;
+	
+}
+
+
+/* contenedor principal de cada vista */
+.indent
+{
+	margin: 5 5 5 5;
+}
+
+
+
+/*Contenedor de vista mosaico*/
+.contenedorMosaico
+{
+	
+	width:95%;
+	
+}
+
+/*MOSAICO (im = item mosaico)*/
+.itemmosaico{
+	background-color:#E6E6DC;
+	border: 1px solid gray;
+	height:100px;
+	margin-bottom: 20px;
+    position: relative;
+}
+/* boton cerrar */
+button.cardClose {
+	color:#FFFFFF;
+	opacity: 1.0;
+	margin-right:5px;
+}
+
+button.editar{
+	font-size:12px;
+	margin-top: 3px;
+}
+
+.encabezadoim{
+	background-color: #00628B;
+	font-size:14pt;
+    color:white;
+    padding:5px;
+    width:100%;
+}
+
+.encabezadoim > a{
+	color: #FFFFFF;
+	
+}
+
+.cuerpoim
+{
+	background-color:#E6E6DC;
+	padding-left: 5px;
+}
+
+.contenidoim{
+	
+	
+}
+.imagenim{
+	
+	
+}
+
+.descripcionim{
+	/*margin-left: 20px;*/
+	text-align:center;
+	
+}
+
+
+
+/* 
+
+.navbar .navbar-nav > li  >  a,
+.navbar .navbar-nav > li  > a:hover,
+.navbar .navbar-nav > li  >  a:focus {
+   
+   background: red;
+   color: blue;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+} */

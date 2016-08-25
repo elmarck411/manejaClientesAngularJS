@@ -1,0 +1,19 @@
+
+<div class="contenedorMosaico">				
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="cliente in clientes | orderBy:'lastName' | filter: busqueda track by $index" id="cliente_{{cliente.idcliente}}">
+		<div class="itemmosaico">
+			
+			<button class="btn close cardClose" title="Eliminar cliente" data-ng-click="eliminarConf(cliente.idcliente)">&times;</button>		
+			<button class="btn close cardClose editar" title="Modificar informacion" ng-click="modificaCliente(cliente.idcliente)"><span class="glyphicon glyphicon-edit"></span></button>		
+			<div class="encabezadoim">
+				<a href="#/actualizaCliente/{{cliente.idcliente}}">	{{cliente.nombre + ' ' + cliente.apellido_paterno}} </a>
+			</div>
+			<div class="cuerpoim">
+				<div class="descripcionim" >
+				{{cliente.ciudad}}, {{cliente.estado1.nombre}} <br/>
+				{{cliente.email}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

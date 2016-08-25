@@ -1,0 +1,10 @@
+﻿<div class="form-group" ng-class="{ 'has-error' : forma.{{ nombre }}.$dirty  && forma.{{ nombre }}.$invalid, 'has-success' : forma.{{ nombre }}.$valid}" >
+<label class="text-info" for="datepicker">{{ labeltext }}: </label>
+    <input  type="text" class="form-control"  id="datepicker" name="{{ nombre }}"  placeholder="{{ labeltext }}" ng-model="modelo" modelo="modelo" required datepicker>
+	<div ng-show="forma.{{ nombre }}.$dirty" >
+	    <p class="help-block text-danger" ng-show="forma.{{ nombre }}.$error.required"> Campo requerido </p>
+        <p class="help-block text-danger" ng-show="forma.{{ nombre }}.$error.date"> Este campo debe ser una fecha valida </p>
+       
+    </div>
+</div>
+<!--  Agregar un componente datePicker, probarlo en mozilla e internet explorer -->

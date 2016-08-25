@@ -1,0 +1,13 @@
+﻿<div class="form-group" ng-class="{ 'has-error' : forma.{{ nombre }}.$touched  && forma.{{ nombre }}.$invalid, 'has-success' : forma.{{ nombre }}.$valid}" >
+	<label class="text-info" for="{{ nombre }}">{{ labeltext }}: </label>
+	
+	<ul ng-repeat="opcion in opciones track by $index" style="list-style-type: none;">
+        <li >
+                <input type="radio" ng-model="modelo"  name="name" ng-value="{{opcion.gender}}" /> {{opcion.gender}}
+        </li>
+    </ul>
+	
+	
+</div>
+
+
